@@ -1,20 +1,16 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-
 if [[ -n $SSH_CONNECTION ]]; then
-  ZSH_THEME="essembeh"
+  ZSH_THEME="agnoster" #"essembeh"
 else
   ZSH_THEME="agnoster"      #"zelda" "agnoster" #"fino-time" #"funky"
 fi
-
 
 #themes to look at; bira, robbyrussell,rkj, 
 #gallois^,jaischeema^,re5et*.
@@ -32,7 +28,7 @@ CASE_SENSITIVE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -90,58 +86,95 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias usage="/vol/linux/bin/usage"
-alias nfiles="/vol/linux/bin/nfiles"
 
+##############################################################################
+############################Imperial alias'###################################
+##############################################################################
 #alias for Prolog to include command-line editing
 alias sicstus="rlwrap sicstus"
 
-
+##############################################################################
+############################General alias'####################################
+##############################################################################
 alias vscode="vscode &"
 
-#if [[ -n $SSH_CONNECTION ]]; then
-#else
-  BASE16_SHELL=$HOME/.config/base16-shell/
-  [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-#fi
+alias cls="clear"
 
-setopt ksh_glob
 
-volume() {
-  DEFAULT="on"
+##############################################################################
+############################Git alias'########################################
+##############################################################################
+alias gits="git status"
+alias gita="git add"
+alias gitc="git commit"
+alias gitp="git push"
 
-  control=${1-$DEFAULT}
 
-  cmd="amixer -D pulse sset Master"
-  
+##############################################################################
+############################Tmux alias'#######################################
+##############################################################################
+alias tns="tmux new -s"
+alias tat="tmux attach -t"
+alias tks="tmux kill-session -t"
+alias tls="tmux ls"
+alias tka="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+alias ta="tmux attach"
 
-  case ${(L)control} in
-    "on")
-      eval "${cmd} on"
-      ;;
+#Functions are prefered over alias' but since above alias' are so small
+#I believe and know I know that they're okay/good although still not prefered
+#Basically they're #define's as far as im concerned
 
-    "off"|"mute"| "m")
-      eval "${cmd} off"
-      ;;
-    
-    +([0-9])(%)?(\+|-))
-      eval "${cmd} ${control}"
-      ;;
 
-    +([0-9]))
-      eval "${cmd} ${control}%"
-      ;;
-    
-    "up")
-      eval "${cmd} 5%+"
-      ;;
 
-    "down")
-      eval "${cmd} 5%-"
-      ;;
+##############################################################################
+############################Windows WSL alias'################################
+##############################################################################
+if [[ "$(uname -r)" == *"Microsoft" ]]; then
 
-    # *)
-    #   eval "${cmd} on"
-      
-  esac
-}
+  alias ghci="ghci.exe" 
+  alias python="python.exe"
+  alias pip="pip.exe"
+
+fi
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+
+  BASE16_SHELL="$HOME/.config/base16-shell/"
+  [ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+    eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+  alias python="python3"
+  alias pip="pip3"
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,10 @@
 "Start Pathogen Plugin Manager
 execute pathogen#infect()
 
-
+"============================================================================="
+"============================Setting & Mappings==============================="
+"============================================================================="
+"The Origional 8
 syntax on
 set number
 set expandtab
@@ -10,8 +13,76 @@ set shiftwidth=2
 filetype indent on
 filetype on
 filetype plugin on
+"============================================================================="
+set tabstop=2
+
+set encoding=utf-8
+
+nmap <Enter> o<Esc>
+
+map j gj
+map k gk
+
+"Tab Commands
+nnoremap <C-t>n :tabnew<cr>
+nnoremap <C-t>d :tabclose<cr>
+nnoremap <C-t>o :tabonly<cr>
+nnoremap <C-t><right> :tabnext<cr>
+nnoremap <C-t><left> :tabprevious<cr>
+nnoremap <C-t><up> :tabfirst<cr>
+nnoremap <C-t><down> :tablast<cr>
+nnoremap <C-t>i :tabs<cr>
+nnoremap <C-t>m :tabmove<cr>
+nnoremap <C-t><C-t> :tabnext<cr>
+"Use CTRL-W gf/F and learn CTRL-W i (seems very cool)
 
 
+"SplitCommands
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+set splitbelow
+set splitright
+
+nnoremap <C-_> <C-w>_
+nnoremap <C--> <C-w>-
+nnoremap <C-\|> <C-w>\|
+nnoremap <C-=> <C-w>=
+
+
+
+"============================================================================="
+"============================Colour Scheme Settings==========================="
+"============================================================================="
+set t_Co=256
+set background=dark
+colorscheme sanoBattousai
+
+"To remove
+hi Number guibg=NONE ctermbg=NONE
+
+"============================================================================="
+"============================Tab Auto Complete================================"
+"============================================================================="
+"Lost origional tab auto complete, trying new
+function! Tab_Or_Complete()
+    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+      return "\<C-P>"
+    else
+      return "\<Tab>"
+    endif
+  endfunction
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+"set dictionary="/usr/dict/words"
+
+set wildmode=longest,list,full
+set wildmenu
+
+"============================================================================="
+"============================Nerdtree Settings================================"
+"============================================================================="
 " Start nerdtree when vim starts if no file specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * if argc()==0 && !exists("s:std_in") | NERDTree | endif
@@ -22,14 +93,10 @@ nmap <C-n> :NERDTreeToggle<CR>
 " close vim if only window left is NerdT.
 autocmd bufenter * if (winnr("$")==1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" if filereadable(expand("~/.vimrc_background"))
-"   let base16colorspace=256
-"   source ~/.vimrc_background
-"   set t_Co=256
-" endif
-
-
-nmap <Enter> o<Esc>
-
-map j gj
-map k gk
+" maybe use later let NERDTreeIgnore=['\c^ntuser\..*']
+"
+"
+"
+if has('macunix')
+  set backspace=indent,eol,start
+endif
