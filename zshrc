@@ -145,7 +145,7 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     eval "$("$BASE16_SHELL/profile_helper.sh")"
 
   alias python="python3"
-  alias pip="pip3"
+  alias pip="python -m pip"
 fi
 
 
