@@ -1,9 +1,10 @@
 <scheme name="sanoBattousai" version="142" parent_scheme="Default">
   <option name="FONT_SCALE" value="1.0" />
   <option name="LINE_SPACING" value="1.0" />
-  <option name="EDITOR_FONT_SIZE" value="12" />
+  <option name="EDITOR_FONT_SIZE" value="14" />
   <option name="EDITOR_FONT_NAME" value="Source Code Pro for Powerline" />
   <option name="CONSOLE_FONT_NAME" value="Source Code Pro for Powerline" />
+  <option name="CONSOLE_FONT_SIZE" value="12" />
   <colors>
     <option name="ADDED_LINES_COLOR" value="2ecc71" />
     <option name="ANNOTATIONS_COLOR" value="7f8c8d" />
@@ -11,9 +12,9 @@
     <option name="CARET_ROW_COLOR" value="34495e" />
     <option name="CONSOLE_BACKGROUND_KEY" value="2c3e50" />
     <option name="FILESTATUS_ADDED" value="3498db" />
-    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="FF9F43" />
+    <option name="FILESTATUS_IDEA_FILESTATUS_IGNORED" value="ff9f43" />
     <option name="FILESTATUS_MODIFIED" value="1abc9c" />
-    <option name="FILESTATUS_UNKNOWN" value="FF9F43" />
+    <option name="FILESTATUS_UNKNOWN" value="ff9f43" />
     <option name="GUTTER_BACKGROUND" value="2c3e50" />
     <option name="INDENT_GUIDE" value="7f8c8d" />
     <option name="LINE_NUMBERS_COLOR" value="5f87ff" />
@@ -32,7 +33,7 @@
   <attributes>
     <option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="FF9F43" /> <!-- orange -->
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -47,7 +48,7 @@
     </option>
     <option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -58,13 +59,73 @@
     </option>
     <option name="BREAKPOINT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="FF9F43" />
+        <option name="BACKGROUND" value="ff9f43" />
       </value>
     </option>
     <option name="CLASS_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="CONSOLE_BLACK_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="2c3e50" />
+      </value>
+    </option>
+    <option name="CONSOLE_BLUE_BRIGHT_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="54a0ff" />
+      </value>
+    </option>
+    <option name="CONSOLE_BLUE_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="5f87ff" />
+      </value>
+    </option>
+    <option name="CONSOLE_CYAN_BRIGHT_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="48dbfb" />
+      </value>
+    </option>
+    <option name="CONSOLE_CYAN_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="abde3" />
+      </value>
+    </option>
+    <option name="CONSOLE_DARKGRAY_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="222f3e" />
+      </value>
+    </option>
+    <option name="CONSOLE_ERROR_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="ff5f5f" />
+      </value>
+    </option>
+    <option name="CONSOLE_GRAY_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="576574" />
+      </value>
+    </option>
+    <option name="CONSOLE_GREEN_BRIGHT_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="1dd1a1" />
+      </value>
+    </option>
+    <option name="CONSOLE_GREEN_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="10ac84" />
+      </value>
+    </option>
+    <option name="CONSOLE_MAGENTA_BRIGHT_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="d75fff" />
+      </value>
+    </option>
+    <option name="CONSOLE_MAGENTA_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="af5fff" />
       </value>
     </option>
     <option name="CONSOLE_NORMAL_OUTPUT">
@@ -72,14 +133,29 @@
         <option name="FOREGROUND" value="5f87ff" />
       </value>
     </option>
+    <option name="CONSOLE_RED_BRIGHT_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="ff5f87" />
+      </value>
+    </option>
+    <option name="CONSOLE_RED_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="ff5f5f" />
+      </value>
+    </option>
     <option name="CONSOLE_SYSTEM_OUTPUT">
       <value>
         <option name="FOREGROUND" value="e0e0e0" />
       </value>
     </option>
+    <option name="CONSOLE_YELLOW_BRIGHT_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="feca57" />
+      </value>
+    </option>
     <option name="CONSOLE_YELLOW_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="cdcd00" />
+        <option name="FOREGROUND" value="ff9f43" />
       </value>
     </option>
     <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
@@ -90,19 +166,19 @@
     </option>
     <option name="CTRL_CLICKABLE">
       <value>
-        <option name="EFFECT_COLOR" value="FF9F43" />
+        <option name="EFFECT_COLOR" value="ff9f43" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="BACKGROUND" value="ffcccc" />
       </value>
     </option>
     <option name="CUSTOM_KEYWORD1_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="D75FFF" />
+        <option name="FOREGROUND" value="d75fff" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -124,7 +200,7 @@
     </option>
     <option name="DEFAULT_BLOCK_COMMENT">
       <value>
-        <option name="FOREGROUND" value="D7AFFF" />
+        <option name="FOREGROUND" value="d7afff" />
       </value>
     </option>
     <option name="DEFAULT_BRACES">
@@ -139,13 +215,13 @@
     </option>
     <option name="DEFAULT_CLASS_NAME">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_CLASS_REFERENCE">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -161,7 +237,7 @@
     </option>
     <option name="DEFAULT_DOC_COMMENT">
       <value>
-        <option name="FOREGROUND" value="D7AFFF"/> <!--"5f87ff" />-->
+        <option name="FOREGROUND" value="d7afff" />
       </value>
     </option>
     <option name="DEFAULT_DOC_COMMENT_TAG">
@@ -226,12 +302,12 @@
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
       </value>
     </option>
     <option name="DEFAULT_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="D75FFF" />
+        <option name="FOREGROUND" value="d75fff" />
       </value>
     </option>
     <option name="DEFAULT_LABEL">
@@ -330,8 +406,8 @@
     </option>
     <option name="DIFF_CONFLICT">
       <value>
-        <option name="BACKGROUND" value="FF9F43" />
-        <option name="ERROR_STRIPE_COLOR" value="FF9F43" />
+        <option name="BACKGROUND" value="ff9f43" />
+        <option name="ERROR_STRIPE_COLOR" value="ff9f43" />
       </value>
     </option>
     <option name="DIFF_DELETED">
@@ -387,9 +463,9 @@
     </option>
     <option name="FOLLOWED_HYPERLINK_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="D75FFF" />
+        <option name="FOREGROUND" value="d75fff" />
         <option name="BACKGROUND" value="2c3e50" />
-        <option name="EFFECT_COLOR" value="D75FFF" />
+        <option name="EFFECT_COLOR" value="d75fff" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
@@ -423,7 +499,7 @@
     </option>
     <option name="GROOVY_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="D75FFF" />
+        <option name="FOREGROUND" value="d75fff" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -443,7 +519,7 @@
     </option>
     <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="D75FFF" />
+        <option name="FOREGROUND" value="d75fff" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -493,7 +569,12 @@
     </option>
     <option name="LOG_EXPIRED_ENTRY">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
+      </value>
+    </option>
+    <option name="LOG_VERBOSE_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="5f87ff" />
       </value>
     </option>
     <option name="LOG_WARNING_OUTPUT">
@@ -537,7 +618,7 @@
     </option>
     <option name="PY.SELF_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="D75FFF" />
+        <option name="FOREGROUND" value="d75fff" />
       </value>
     </option>
     <option name="REASSIGNED_LOCAL_VARIABLE_ATTRIBUTES">
@@ -548,13 +629,13 @@
     </option>
     <option name="SASS_MIXIN">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="SASS_VARIABLE">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -617,9 +698,9 @@
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="D75FFF" />
+        <option name="FOREGROUND" value="d75fff" />
         <option name="FONT_TYPE" value="1" />
-        <option name="ERROR_STRIPE_COLOR" value="D75FFF" />
+        <option name="ERROR_STRIPE_COLOR" value="d75fff" />
       </value>
     </option>
     <option name="TYPO">
@@ -642,7 +723,7 @@
     </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="FF9F43" />
+        <option name="FOREGROUND" value="ff9f43" />
         <option name="ERROR_STRIPE_COLOR" value="ebc700" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
@@ -650,8 +731,8 @@
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
         <option name="FONT_TYPE" value="1" />
-        <option name="EFFECT_COLOR" value="D75FFF" />
-        <option name="ERROR_STRIPE_COLOR" value="D75FFF" />
+        <option name="EFFECT_COLOR" value="d75fff" />
+        <option name="ERROR_STRIPE_COLOR" value="d75fff" />
       </value>
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
