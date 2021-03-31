@@ -68,64 +68,9 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
-    <option name="CONSOLE_BLACK_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="2c3e50" />
-      </value>
-    </option>
-    <option name="CONSOLE_BLUE_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="54a0ff" />
-      </value>
-    </option>
-    <option name="CONSOLE_BLUE_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="5f87ff" />
-      </value>
-    </option>
-    <option name="CONSOLE_CYAN_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="48dbfb" />
-      </value>
-    </option>
-    <option name="CONSOLE_CYAN_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="abde3" />
-      </value>
-    </option>
-    <option name="CONSOLE_DARKGRAY_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="222f3e" />
-      </value>
-    </option>
     <option name="CONSOLE_ERROR_OUTPUT">
       <value>
         <option name="FOREGROUND" value="ff5f5f" />
-      </value>
-    </option>
-    <option name="CONSOLE_GRAY_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="576574" />
-      </value>
-    </option>
-    <option name="CONSOLE_GREEN_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="1dd1a1" />
-      </value>
-    </option>
-    <option name="CONSOLE_GREEN_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="10ac84" />
-      </value>
-    </option>
-    <option name="CONSOLE_MAGENTA_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="d75fff" />
-      </value>
-    </option>
-    <option name="CONSOLE_MAGENTA_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="af5fff" />
       </value>
     </option>
     <option name="CONSOLE_NORMAL_OUTPUT">
@@ -133,29 +78,14 @@
         <option name="FOREGROUND" value="5f87ff" />
       </value>
     </option>
-    <option name="CONSOLE_RED_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="ff5f87" />
-      </value>
-    </option>
-    <option name="CONSOLE_RED_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="ff5f5f" />
-      </value>
-    </option>
     <option name="CONSOLE_SYSTEM_OUTPUT">
       <value>
         <option name="FOREGROUND" value="e0e0e0" />
       </value>
     </option>
-    <option name="CONSOLE_YELLOW_BRIGHT_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="feca57" />
-      </value>
-    </option>
     <option name="CONSOLE_YELLOW_OUTPUT">
       <value>
-        <option name="FOREGROUND" value="ff9f43" />
+        <option name="FOREGROUND" value="cdcd00" />
       </value>
     </option>
     <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
@@ -535,7 +465,7 @@
     </option>
     <option name="INJECTED_LANGUAGE_FRAGMENT">
       <value>
-        <option name="BACKGROUND" value="7f8c8d" />
+        <option name="FOREGROUND" value="5f8fff" />
       </value>
     </option>
     <option name="INSTANCE_FIELD_ATTRIBUTES">
@@ -557,6 +487,17 @@
         <option name="BACKGROUND" value="7f8c8d" />
       </value>
     </option>
+    <option name="KOTLIN_SMART_CAST_VALUE">
+      <value>
+        <option name="FOREGROUND" value="48dbfb" />
+        <option name="FONT_TYPE" value="3" />
+      </value>
+    </option>
+    <option name="KOTLIN_SMART_CONSTANT">
+      <value>
+        <option name="FOREGROUND" value="2ecc71" />
+      </value>
+    </option>
     <option name="LOCAL_VARIABLE_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="1bbc9b" />
@@ -570,11 +511,6 @@
     <option name="LOG_EXPIRED_ENTRY">
       <value>
         <option name="FOREGROUND" value="ff9f43" />
-      </value>
-    </option>
-    <option name="LOG_VERBOSE_OUTPUT">
-      <value>
-        <option name="FOREGROUND" value="5f87ff" />
       </value>
     </option>
     <option name="LOG_WARNING_OUTPUT">

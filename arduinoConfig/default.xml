@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE RSyntaxTheme SYSTEM "theme.dtd">
+
+<!--
+	RSyntaxTextArea's default theme.
+	See theme.dtd and org.fife.ui.rsyntaxtextarea.Theme for more information.
+-->
+<RSyntaxTheme version="1.0">
+
+   <!-- Omitting baseFont will use a system-appropriate monospaced. -->
+   <baseFont family="Source Code Pro Bold" size="18"/>
+   
+   <!--  General editor colors. -->
+   <background color="2C3E50"/>
+   <caret color="FFFFFF"/>
+   <selection fg="5F87FF" bg="222F3E" />
+   <currentLineHighlight color="ffffaa" fade="false"/>
+   <marginLine fg="b0b4b9"/>
+   <markAllHighlight color="ffc800"/>
+   <markOccurrencesHighlight color="d4d4d4" border="false"/>
+   <matchedBracket fg="0ABDE3" bg="5F87FF" highlightBoth="false" animate="false"/>
+   <hyperlinks fg="48DBFB"/>
+   <secondaryLanguages>
+      <language index="1" bg="fff0cc"/>
+      <language index="2" bg="dafeda"/>
+      <language index="3" bg="ffe0f0"/>
+   </secondaryLanguages>
+   
+   <!-- Gutter styling. -->
+   <gutterBorder color="dddddd"/>
+   <lineNumbers fg="5F87FF"/>
+   <foldIndicator fg="54A0FF" iconBg="ffffff"/>
+   <iconRowHeader activeLineRange="3399ff"/>
+   
+   <!-- Syntax tokens. -->
+   <tokenStyles>
+      <style token="IDENTIFIER" fg="FFFFFF"/>
+      <style token="DATA_TYPE" fg="5f87ff" bold="true"/>
+      <style token="FUNCTION" fg="1DD1A1"/>
+      <style token="VARIABLE" fg="54A0FF" bold="true"/>
+      <style token="RESERVED_WORD" fg="10AC84" bold="true"/>
+      <style token="RESERVED_WORD_2" fg="5F87FF" bold="false"/>
+      <style token="PREPROCESSOR" fg="AF5FFF" bold="false"/>
+
+      <style token="ANNOTATION" fg="808080"/>
+      <style token="COMMENT_DOCUMENTATION" fg="D7AFFF"/>
+      <style token="COMMENT_EOL" fg="D7AFFF"/>
+      <style token="COMMENT_MULTILINE" fg="D7AFFF"/>
+      <style token="COMMENT_KEYWORD" fg="7F9FBF" bold="true"/>
+      <style token="COMMENT_MARKUP" fg="7f7f9f"/>
+      <style token="LITERAL_BOOLEAN" fg="000000" bold="false"/>
+      <style token="LITERAL_NUMBER_DECIMAL_INT" fg="5f87FF"/>
+      <style token="LITERAL_NUMBER_FLOAT" fg="48DBFB"/>
+      <style token="LITERAL_NUMBER_HEXADECIMAL" fg="54A0FF"/>
+      <style token="LITERAL_STRING_DOUBLE_QUOTE" fg="FF5F5F"/>
+      <style token="LITERAL_CHAR" fg="FF9F43"/>
+      <style token="LITERAL_BACKQUOTE" fg="000000"/>
+
+      <style token="OPERATOR" fg="804040"/>
+      <style token="REGEX" fg="008040"/>
+      <!-- SEPARATOR includes brackets -->
+      <style token="SEPARATOR" fg="FFFFFF" />
+      <style token="WHITESPACE" fg="000000"/>
+      <style token="ERROR_IDENTIFIER" fg="FF5F5F" />
+      <style token="ERROR_NUMBER_FORMAT" fg="FF5F5F" />
+      <style token="ERROR_STRING_DOUBLE" fg="FF5F5F" />
+      <style token="ERROR_CHAR" fg="FF5F5F" />
+   </tokenStyles>
+
+</RSyntaxTheme>
