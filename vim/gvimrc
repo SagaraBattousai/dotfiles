@@ -1,0 +1,15 @@
+if (has("win32") || has("win64"))
+  set guifont=Source_Code_Pro_Medium:h12:cANSI:qDRAFT
+  set backspace=indent,eol,start
+  set ruler
+  set vb t_vb=
+
+
+  set guioptions-=m
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
+  "nnoremap <C-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
+  "nnoremap <C-F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
+  "nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
+endif
