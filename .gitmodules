@@ -12,4 +12,4 @@
 	url = https://github.com/JuliaEditorSupport/julia-vim.git
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
-	url = https://tpope.io/vim/unimpaired.git
+	url = https://github.com/tpope/vim-unimpaired.git
