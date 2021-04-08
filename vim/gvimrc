@@ -1,9 +1,9 @@
-if (has("win32") || has("win64"))
+"|| has("win64"))
+if has("win32") 
   set guifont=Source_Code_Pro_Medium:h12:cANSI:qDRAFT
   set backspace=indent,eol,start
   set ruler
   set vb t_vb=
-
 
   set guioptions-=m
   set guioptions-=T

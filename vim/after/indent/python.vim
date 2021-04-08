@@ -41,6 +41,32 @@ function GetGooglePythonIndent(lnum)
     endif
   endif
 
+
+  " JAMES CUSTOM INDENT WITH MULTILINE RETURN
+  if getline(v:lnum) =~ '^\s*\(def\|if\|class\|while\|for\|try\)\>'
+    
+    let plnum = prevnonblank(v:lnum - 1)
+
+    if plnum != 0
+      call cursor(plnum, 1)
+      let pp = searchpair('(\|{\|\[', '', ')\|}\|\]', 'b') "'nbW',
+      if pp != 0
+        "if getline(pp) =~ '^\s*\(break\|continue\|raise\|return\|pass\)\>'
+        if getline(pp) =~ '^\s*return\>'
+          " See if the user has already dedented
+          if indent(a:lnum) > indent(plnum) - shiftwidth()
+            " If not, recommend one dedent
+            return indent(plnum) - shiftwidth()
+          endif
+          " Otherwise, trust the user
+          return -1
+        endif
+      endif
+    endif
+  endif
+
+
+
   " Delegate the rest to the original function.
   return GetPythonIndent(a:lnum)
 
