@@ -96,7 +96,7 @@ alias sicstus="rlwrap sicstus"
 ##############################################################################
 ############################General alias'####################################
 ##############################################################################
-alias vscode="vscode &"
+#alias vscode="vscode &"
 
 alias cls="clear"
 
@@ -137,6 +137,10 @@ if [[ "$(uname -r)" == *"Microsoft" ]]; then
 
 fi
 
+#####################################################################
+######################MAC alias'#####################################
+#####################################################################
+
 if [[ "$(uname -s)" == "Darwin" ]]; then
 
   BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -149,32 +153,58 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 fi
 
 
+###############################################################################
+######################Imperial doc alias'######################################
+###############################################################################
+
+if [[ $(uname -n) == *"doc.ic.ac.uk" ]]; then
+  #if [[ -n $SSH_CONNECTION ]]; then
+  #else
+  BASE16_SHELL=$HOME/.config/base16-shell/
+  [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+  #fi
+
+  setopt ksh_glob
+
+  volume() {
+    DEFAULT="on"
+
+    control=${1-$DEFAULT}
+
+    cmd="amixer -D pulse sset Master"
 
 
+    case ${(L)control} in
+      "on")
+        eval "${cmd} on"
+        ;;
+
+      "off"|"mute"| "m")
+        eval "${cmd} off"
+        ;;
+
+      +([0-9])(%)?(\+|-))
+        eval "${cmd} ${control}"
+        ;;
+
+      +([0-9]))
+        eval "${cmd} ${control}%"
+        ;;
+
+      "up")
+        eval "${cmd} 5%+"
+        ;;
+
+      "down")
+        eval "${cmd} 5%-"
+        ;;
+
+      # *)
+        #   eval "${cmd} on"
+
+      esac
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  export PYTHONPATH=$HOME/pythonUtilities:$PATHPATH
+fi
