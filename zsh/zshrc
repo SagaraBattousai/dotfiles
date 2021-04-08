@@ -72,6 +72,8 @@ else
   export EDITOR='vim'
 fi
 
+umask 023
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -96,8 +98,6 @@ alias sicstus="rlwrap sicstus"
 ##############################################################################
 ############################General alias'####################################
 ##############################################################################
-alias vscode="vscode &"
-
 alias cls="clear"
 
 
@@ -134,6 +134,13 @@ if [[ "$(uname -r)" == *"Microsoft" ]]; then
   alias ghci="ghci.exe" 
   alias python="python.exe"
   alias pip="pip.exe"
+  alias gvim="gvim.exe"
+
+  COLORS_FILE=~/.dircolors
+  #LS_COLORS
+  if [[ -f "$COLORS_FILE" ]]; then
+    eval "$(dircolors -b ~/.dircolors)"
+  fi
 
 fi
 

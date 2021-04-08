@@ -18,10 +18,19 @@ set tabstop=2
 
 set encoding=utf-8
 
+set hlsearch
+
+set cc=81
+
 nmap <Enter> o<Esc>
 
 map j gj
 map k gk
+
+"nnoremap \l 0d$
+nnoremap \l :%s/\s\+$//e<CR>
+"noremap \h :set hlsearch!<cr>
+noremap \h :noh<CR>
 
 "Tab Commands
 nnoremap <C-t>n :tabnew<cr>
@@ -61,7 +70,7 @@ set background=dark
 colorscheme sanoBattousai
 
 "To remove
-hi Number guibg=NONE ctermbg=NONE
+"hi Number guibg=NONE ctermbg=NONE
 
 "============================================================================="
 "============================Tab Auto Complete================================"
@@ -87,6 +96,8 @@ set wildmenu
 autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * if argc()==0 && !exists("s:std_in") | NERDTree | endif
 
+
+
 " Start and close NerdT.
 nmap <C-n> :NERDTreeToggle<CR>
 
@@ -97,6 +108,5 @@ autocmd bufenter * if (winnr("$")==1 && exists("b:NERDTree") && b:NERDTree.isTab
 "
 "
 "
-if has('macunix')
-  set backspace=indent,eol,start
-endif
+
+set backspace=indent,eol,start
