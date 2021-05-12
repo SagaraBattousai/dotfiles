@@ -20,8 +20,6 @@ set encoding=utf-8
 
 set hlsearch
 
-set cc=81
-
 nmap <Enter> o<Esc>
 
 map j gj
@@ -55,10 +53,12 @@ nnoremap <C-h> <C-w>h
 set splitbelow
 set splitright
 
-nnoremap <C-_> <C-w>_
-nnoremap <C--> <C-w>-
-nnoremap <C-\|> <C-w>\|
-nnoremap <C-=> <C-w>=
+" nnoremap <C-_> <C-w>_
+" nnoremap <C--> <C-w>-
+" nnoremap <C-\|> <C-w>\|
+" nnoremap <C-=> <C-w>=
+noremap zz <C-w>_ \| <C-w>\|
+noremap zo <C-w>=
 
 
 
@@ -110,3 +110,16 @@ autocmd bufenter * if (winnr("$")==1 && exists("b:NERDTree") && b:NERDTree.isTab
 "
 
 set backspace=indent,eol,start
+
+if has("win32")
+  set shell=pwsh.exe
+  set shellcmdflag=-NoLogo\ -NonInteractive\ -Command
+  set shellpipe=|
+  set shellredir=>
+endif
+
+
+
+
+
+
