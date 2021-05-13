@@ -29,15 +29,15 @@ function GetCaloPythonIndent(lnum)
     endif
   endif
 
-  "TODO fix but okay for now!
-  " trust deindent by user when after single statement multiline if
-  if getline(v:lnum) !~ '(\s*$'
-    let plnum = prevnonblank(v:lnum - 1)
-    if plnum != 0 && getline(plnum) !~ '(\s*$'
-      call cursor(plnum, 1)
+  " Trust deindent by user when after single statement, multiline 'if'
+  " statement
+  let plnum = prevnonblank(v:lnum - 1)
+    if plnum != 0 && getline(plnum) =~ ')\s*$'
+      call cursor(plnum, col([plnum, '$']))
       let ppair = searchpair('(\|{\|\[', '', ')\|}\|\]', 'b') "'nbW',
       if ppair != 0
         let pplnum = prevnonblank(ppair - 1)
+        echom pplnum
         if getline(pplnum) =~ '^\s*\(if\|else\|elif\)\>' "can drop else and elif
           " See if the user has already dedented
           if indent(a:lnum) > indent(plnum) - shiftwidth()
@@ -50,6 +50,37 @@ function GetCaloPythonIndent(lnum)
       endif
     endif
   endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
