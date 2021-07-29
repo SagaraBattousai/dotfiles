@@ -15,6 +15,7 @@ function GetCaloCMakeIndent(lnum)
       if ppair != 0
         if getline(ppair) =~ '^\s*\(project\|PROJECT\)\>'
           " See if the user has already dedented
+          " Just (09/07/21) rechecke and above is good
           if indent(a:lnum) > indent(plnum) - shiftwidth()
             " If not, recommend one dedent
             return indent(plnum) - shiftwidth()
