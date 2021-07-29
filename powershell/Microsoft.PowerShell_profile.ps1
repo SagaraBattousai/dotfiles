@@ -86,9 +86,17 @@ function global:Format-WslArgument {
   if ($interactive -and $arg.Contains(" ")) {
     return "'$arg'"
   } else {
-    return ($arg -replace " ", "\ ") -replace `
+    # "(?<!\\) " means that an already backslash escaped space will not
+    # be backslash escaped again, a.k.a trust the user.
+    return ($arg -replace "(?<!\\) ", "\ ") -replace `
             "([()|])", ('\$1', '`$1')[$interactive] 
   }
+}
+
+function global:Path-Separator {
+  param($path)
+  # (?! ) means dont convert if followed by a space since \ is escaping the space.
+  return $path -replace "\\(?! )", "/" 
 }
 
 function global:Format-WslPaths {
@@ -98,12 +106,12 @@ function global:Format-WslPaths {
     # If a path is absolute with a qualifier (e.g. C:), 
     # run it through wslpath to map it to the appropriate mount point.
     if (Split-Path $paths[$i] -IsAbsolute -ErrorAction Ignore) {
-      $paths[$i] = Format-WslArgument (wsl.exe wslpath ($paths[$i] -replace "\\", "/"))
+      $paths[$i] = Format-WslArgument (wsl.exe wslpath (Path-Separator $paths[$i]))
 
       # If a path is relative, the current working directory will be
       # translated to an appropriate mount point, so just format it.
     } elseif (Test-Path $paths[$i] -IsValid -ErrorAction Ignore) {
-        $paths[$i] = Format-WslArgument ($paths[$i] -replace "\\", "/")
+        $paths[$i] = Format-WslArgument (Path-Separator $paths[$i]) #($paths[$i] -replace "\\", "/")
     }
   }
 
