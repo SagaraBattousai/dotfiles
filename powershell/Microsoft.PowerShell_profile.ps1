@@ -15,6 +15,7 @@ Set-Alias -Name touch -Value NewFile
 ###############################################
 Remove-Alias ls -Force -ErrorAction Ignore
 function global:ls {
+  $args = (Format-WslPaths $args)
   #Older slowerway to generate colours via eval, but slow because eval is slow
   #base_arg = "`$(dircolors -b ~/.dircolors); ls --color=auto"
   
