@@ -1,13 +1,7 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    // Add custom actions and keybindings to this array.
-    // To unbind a key combination from your defaults.json, set the command to "unbound".
-    // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
     "actions": 
     [
-        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
-        // To learn more about selection, visit https://aka.ms/terminal-selection
         {
             "command": 
             {
@@ -17,26 +11,25 @@
             "keys": "ctrl+shift+c"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+shift+v"
-        },
-        // Press Ctrl+Shift+F to open the search box
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        // Press Alt+Shift+D to open a new pane.
-        // - "split": "auto" makes this pane open in the direction that provides the most surface area.
-        // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
-        // To learn more about panes, visit https://aka.ms/terminal-panes
-        {
             "command": 
             {
                 "action": "splitPane",
-                "split": "auto",
+                "split": "horizontal",
                 "splitMode": "duplicate"
             },
-            "keys": "alt+`"
+            "keys": "alt+minus"
+        },
+        {
+            "command": "togglePaneZoom",
+            "keys": "alt+z"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+shift+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": 
@@ -51,18 +44,14 @@
             "command": 
             {
                 "action": "splitPane",
-                "split": "horizontal",
+                "split": "auto",
                 "splitMode": "duplicate"
             },
-            "keys": "alt+-"
+            "keys": "alt+`"
         },
         {
             "command": "closePane",
             "keys": "alt+x"
-        },
-        {
-            "command": "togglePaneZoom",
-            "keys": "alt+z"
         }
     ],
     "alwaysShowTabs": true,
@@ -73,9 +62,8 @@
     [
         "Windows.Terminal.Azure"
     ],
-    "initialCols": 81, //97
+    "initialCols": 81,
     "initialRows": 25,
-    "keybindings": null,
     "profiles": 
     {
         "defaults": 
@@ -86,9 +74,12 @@
         [
             {
                 "colorScheme": "sanoBattousai",
-                "fontFace": "Source Code Pro",
-                "fontSize": 11,
-                "fontWeight": "medium",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 11,
+                    "weight": "medium"
+                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell Core",
@@ -96,9 +87,12 @@
             },
             {
                 "colorScheme": "sanoBattousaiWSL",
-                "fontFace": "Source Code Pro",
-                "fontSize": 12,
-                "fontWeight": "medium",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 12,
+                    "weight": "medium"
+                },
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
                 "name": "Ubuntu-20.04",
@@ -106,10 +100,13 @@
             },
             {
                 "colorScheme": "sanoBattousai",
-                "fontFace": "Source Code Pro",
-                "fontSize": 11,
-                "fontWeight": "medium",
                 "commandline": "cmd.exe /k \"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Auxiliary/Build/vcvars64.bat\"",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 11,
+                    "weight": "medium"
+                },
                 "guid": "{956b0fc6-02fe-4390-b360-e4d28a3ad57e}",
                 "hidden": false,
                 "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
@@ -118,9 +115,12 @@
             {
                 "colorScheme": "sanoBattousai",
                 "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -msys",
-                "fontFace": "Source Code Pro",
-                "fontSize": 11,
-                "fontWeight": "medium",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 11,
+                    "weight": "medium"
+                },
                 "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
                 "icon": "C:/msys64/msys2.ico",
                 "name": "MSYS2"
@@ -128,9 +128,12 @@
             {
                 "colorScheme": "sanoBattousai",
                 "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64",
-                "fontFace": "Source Code Pro",
-                "fontSize": 11,
-                "fontWeight": "medium",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 11,
+                    "weight": "medium"
+                },
                 "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
                 "icon": "C:/msys64/mingw64.ico",
                 "name": "MINGW64"
@@ -140,8 +143,7 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
-            },
-            {}
+            }
         ]
     },
     "schemes": 
