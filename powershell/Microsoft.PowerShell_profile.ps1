@@ -37,8 +37,8 @@ function global:tree {
 #######GENERAL UNIX COMMANDS FOR WINDOWS#######
 ###############################################
 $unixCommands = "awk", "base64", "cat", "chmod", "cp", "curl", "diff", "du", `
-                "grep", "gzip", "head", "less", "man", "mv", "pwd", "sed", `
-                "seq", "tail", "umask", "wc"
+                "grep", "gzip", "head", "hexdump", "less", "man", "mv", `
+                "pwd", "sed", "seq", "tail", "umask", "wc"
 
 $WslDefaultParameters = @{
   Disabled = $false;
@@ -48,8 +48,10 @@ $WslDefaultParameters = @{
 
 # Unix Regex to keep quoted arguments
 # Currently can't workout how to do both " and ' but one day ....
-# Adendum: screws up paths with spaces
-# TODO: Work out why I needed this!
+# TODO: Answer = Because of mv function and spaces (even \ escaped),
+# can't quite explain it.
+# Still don't understand why it works as it makes files with spaces into 
+# extra args so why is that better?
 $ARG_REGEX = ' +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)' 
 
 #Cant see a smart way around the whole Invoke-Expression
@@ -73,9 +75,9 @@ function global:Call-WslCommand {
   param([string]$fn_name, $piped, $arguments, $defaultArgs)
   if ($piped.MoveNext()) {
     $piped.Reset()
-    $piped | wsl.exe $fn_name $defaultArgs $arguments #($arguments -split $ARG_REGEX)
+    $piped | wsl.exe $fn_name $defaultArgs ($arguments -split $ARG_REGEX)
   } else {
-    wsl.exe $fn_name $defaultArgs $arguments #($arguments -split $ARG_REGEX)
+    wsl.exe $fn_name $defaultArgs ($arguments -split $ARG_REGEX)
   }
 
 

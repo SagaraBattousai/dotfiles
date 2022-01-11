@@ -20,15 +20,19 @@ set encoding=utf-8
 
 set hlsearch
 
+let mapleader = "`"
+nnoremap , <leader>
+
 nmap <Enter> o<Esc>
 
 map j gj
 map k gk
 
-"nnoremap \l 0d$
-nnoremap \l :%s/\s\+$//e<CR>
-"noremap \h :set hlsearch!<cr>
-noremap \h :noh<CR>
+" nnoremap \l :%s/\s\+$//e<CR>
+nnoremap <leader>l :%s/\s\+$//e<CR>
+
+" noremap \h :noh<CR>
+noremap <leader>h :noh<CR>
 
 "Tab Commands
 nnoremap <C-t>n :tabnew<cr>
@@ -59,6 +63,21 @@ set splitright
 " nnoremap <C-=> <C-w>=
 noremap zz <C-w>_ \| <C-w>\|
 noremap zo <C-w>=
+
+nnoremap <leader>t :ter ++close<cr>
+tnoremap <leader>t <C-w>:ter ++close<cr>
+
+" tnoremap <leader><C-[> <C-w>:q!<cr>
+tnoremap <leader>q <C-w>:q!<cr>
+tnoremap <leader><C-[> <C-w>N
+
+
+" Terminal Split Commands
+tnoremap <C-j> <C-w>j
+tnoremap <C-k> <C-w>k
+tnoremap <C-l> <C-w>l
+tnoremap <C-h> <C-w>h
+
 
 
 
@@ -117,6 +136,17 @@ if has("win32")
   set shellpipe=|
   set shellredir=>
 endif
+
+if !has("gui_running") " and win32 or is okay without?
+  set t_ut="" 
+endif
+
+
+
+
+
+
+
 
 
 
