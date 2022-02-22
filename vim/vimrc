@@ -1,9 +1,9 @@
 "Start Pathogen Plugin Manager
 execute pathogen#infect()
 
-"============================================================================="
-"============================Setting & Mappings==============================="
-"============================================================================="
+"==============================================================="
+"=======================Setting & Mappings======================"
+"==============================================================="
 "The Origional 8
 syntax on
 set number
@@ -13,7 +13,7 @@ set shiftwidth=2
 filetype indent on
 filetype on
 filetype plugin on
-"============================================================================="
+"==============================================================="
 set tabstop=2
 
 set encoding=utf-8
@@ -48,11 +48,29 @@ nnoremap <C-t><C-t> :tabnext<cr>
 "Use CTRL-W gf/F and learn CTRL-W i (seems very cool)
 
 
-"SplitCommands
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-h> <C-w>h
+"==============================================================="
+"========================Window Settings========================"
+"==============================================================="
+
+                        "SplitCommands"
+                        "============="
+" Could Keep these, and may well add back in, but limiting for now
+" in case I want to use elsewhere or fore bespoke stuff 
+" like mapping j to gj
+
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-l> <C-w>l
+"nnoremap <C-h> <C-w>h
+
+nnoremap <C-Up> <C-w>k
+nnoremap <C-Down> <C-w>j
+nnoremap <C-Left> <C-w>h
+nnoremap <C-Right> <C-w>l
+
+nnoremap <C-A-Right> <C-w>+
+nnoremap <C-A-Left> <C-w>-
+nnoremap <C-A-'> <C-W>R
 
 set splitbelow
 set splitright
@@ -62,7 +80,12 @@ set splitright
 " nnoremap <C-\|> <C-w>\|
 " nnoremap <C-=> <C-w>=
 noremap zz <C-w>_ \| <C-w>\|
-noremap zo <C-w>=
+noremap z= <C-w>=
+
+
+"==============================================================="
+"======================Terminal Settings========================"
+"==============================================================="
 
 nnoremap <leader>t :ter ++close<cr>
 tnoremap <leader>t <C-w>:ter ++close<cr>
@@ -71,15 +94,11 @@ tnoremap <leader>t <C-w>:ter ++close<cr>
 tnoremap <leader>q <C-w>:q!<cr>
 tnoremap <leader><C-[> <C-w>N
 
-
 " Terminal Split Commands
-tnoremap <C-j> <C-w>j
-tnoremap <C-k> <C-w>k
-tnoremap <C-l> <C-w>l
-tnoremap <C-h> <C-w>h
-
-
-
+tnoremap <C-Up> <C-w>k
+tnoremap <C-Down> <C-w>j
+tnoremap <C-Left> <C-w>h
+tnoremap <C-Right> <C-w>l
 
 "============================================================================="
 "============================Colour Scheme Settings==========================="

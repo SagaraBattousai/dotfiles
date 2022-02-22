@@ -13,3 +13,9 @@ if has("win32")
   "nnoremap <C-F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
   "nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
 endif
+
+if &number
+  set columns=84
+else
+  set columns=80
+endif
