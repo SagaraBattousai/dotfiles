@@ -1,5 +1,0 @@
-text=auto
-
-*.vim text eol=lf
-vim/vimrc text eol=lf
-zsh/zshrc eol=lf
