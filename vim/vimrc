@@ -132,8 +132,7 @@ set wildmenu
 "============================================================================="
 " Start nerdtree when vim starts if no file specified
 autocmd StdinReadPre * let s:std_in=1
-autocmd vimenter * if argc()==0 && !exists("s:std_in") | NERDTree | endif
-
+autocmd VimEnter * if argc()==0 && !exists("s:std_in") | NERDTree | endif
 
 
 " Start and close NerdT.
