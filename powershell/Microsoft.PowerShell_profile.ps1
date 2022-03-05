@@ -37,8 +37,8 @@ function global:tree {
 #######GENERAL UNIX COMMANDS FOR WINDOWS#######
 ###############################################
 $unixCommands = "awk", "base64", "cat", "chmod", "cp", "curl", "diff", "du", `
-                "grep", "gzip", "head", "hexdump", "less", "man", "mv", `
-                "pwd", "sed", "seq", "tail", "umask", "wc"
+                "find", "grep", "gzip", "head", "hexdump", "less", "man", `
+                "mv", "pwd", "sed", "seq", "tail", "umask", "wc"
 
 $WslDefaultParameters = @{
   Disabled = $false;
