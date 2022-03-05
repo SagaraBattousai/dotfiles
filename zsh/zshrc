@@ -132,12 +132,12 @@ alias ta="tmux attach"
 ##############################################################################
 ############################Windows WSL alias'################################
 ##############################################################################
-if [[ "$(uname -r)" == *"Microsoft" ]]; then
+if [[ "$(uname -r)" == *(m|M)"icrosoft"* ]]; then
 
   alias ghci="ghci.exe" 
   alias python="python.exe"
   alias pip="pip.exe"
-  alias gvim="gvim.exe"
+  alias gvim="cmd.exe /c gvim"
 
   COLORS_FILE=~/.dircolors
   #LS_COLORS
