@@ -16,11 +16,10 @@ Set-Alias -Name touch -Value NewFile
 Remove-Alias ls -Force -ErrorAction Ignore
 function global:ls {
   $args = (Format-WslPaths $args)
-  #Older slowerway to generate colours via eval, but slow because eval is slow
-  #base_arg = "`$(dircolors -b ~/.dircolors); ls --color=auto"
   
   $base_arg = ($LS_COLORS, $EXPORT_LS_COLORS, "ls --color=auto") -join "; "
         
+  # Call-WslCommand eval $input $args $base_arg
   Call-WslCommand eval $input $args $base_arg
 }
 
@@ -38,7 +37,7 @@ function global:tree {
 ###############################################
 $unixCommands = "awk", "base64", "cat", "chmod", "cp", "curl", "diff", "du", `
                 "find", "grep", "gzip", "head", "hexdump", "less", "man", `
-                "mv", "pwd", "sed", "seq", "tail", "umask", "wc"
+                "mv", "pwd", "sed", "seq", "tail", "tree", "umask", "wc"
 
 $WslDefaultParameters = @{
   Disabled = $false;
@@ -46,13 +45,9 @@ $WslDefaultParameters = @{
   base64 = "--wrap=0"
   }
 
-# Unix Regex to keep quoted arguments
-# Currently can't workout how to do both " and ' but one day ....
-# TODO: Answer = Because of mv function and spaces (even \ escaped),
-# can't quite explain it.
-# Still don't understand why it works as it makes files with spaces into 
-# extra args so why is that better?
-$ARG_REGEX = ' +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)' 
+# Can't quite remember why we do this quote check or what cases it needs but
+# We've now fixed it for the "\ " case (aka backslash space)
+$ARG_REGEX = '(?<!\\) +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)' 
 
 #Cant see a smart way around the whole Invoke-Expression
 $unixCommands | ForEach-Object { Invoke-Expression @"
@@ -73,6 +68,9 @@ $unixCommands | ForEach-Object { Invoke-Expression @"
 
 function global:Call-WslCommand {
   param([string]$fn_name, $piped, $arguments, $defaultArgs)
+
+  echo ($arguments -split $ARG_REGEX)
+
   if ($piped.MoveNext()) {
     $piped.Reset()
     $piped | wsl.exe $fn_name $defaultArgs ($arguments -split $ARG_REGEX)
