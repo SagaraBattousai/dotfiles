@@ -69,8 +69,6 @@ $unixCommands | ForEach-Object { Invoke-Expression @"
 function global:Call-WslCommand {
   param([string]$fn_name, $piped, $arguments, $defaultArgs)
 
-  echo ($arguments -split $ARG_REGEX)
-
   if ($piped.MoveNext()) {
     $piped.Reset()
     $piped | wsl.exe $fn_name $defaultArgs ($arguments -split $ARG_REGEX)
