@@ -73,6 +73,7 @@
         "list": 
         [
             {
+                "name": "PowerShell Core",
                 "colorScheme": "sanoBattousai",
                 "font": 
                 {
@@ -82,12 +83,26 @@
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
-                "name": "PowerShell Core",
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
+                "name": "Developer Powershell",
                 "colorScheme": "sanoBattousai",
-                "commandline": "cmd.exe /k \"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Auxiliary/Build/vcvars64.bat\"",
+                "commandline": "pwsh.exe -noe -c \"&{Import-Module \"\"\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 9a06114b}",
+                "font": 
+                {
+                    "face": "Source Code Pro",
+                    "size": 11,
+                    "weight": "medium"
+                },
+                "guid": "{2c5a79ff-0c48-4cee-b54f-5030ff83cb94}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\PowerShell\\7\\assets\\Powershell_av_colors.ico"
+            },
+            {
+                "name": "Native Tools x64",
+                "colorScheme": "sanoBattousai",
+                "commandline": "cmd.exe /k \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\"",
                 "font": 
                 {
                     "face": "Source Code Pro",
@@ -96,27 +111,18 @@
                 },
                 "guid": "{956b0fc6-02fe-4390-b360-e4d28a3ad57e}",
                 "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
-                "name": "Native Tools x64"
+                "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png"
             },
             {
+                "name": "Command Prompt",
                 "commandline": "cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "Command Prompt"
+                "hidden": false
             },
             {
-                "colorScheme": "sanoBattousai",
-                "font": 
-                {
-                    "face": "Source Code Pro for Powerline",
-                    "size": 12,
-                    "weight": "medium"
-                },
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-                "hidden": false,
-                "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl"
+                "name": "Ubuntu 20.04.4 LTS",
+                "guid": "{5a069d55-87bd-57cf-8a07-2726b203d3e5}",
+                "source": "CanonicalGroupLimited.Ubuntu20.04LTS_79rhkp1fndgsc"
             }
         ]
     },

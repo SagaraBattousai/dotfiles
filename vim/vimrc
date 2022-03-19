@@ -20,8 +20,7 @@ set encoding=utf-8
 
 set hlsearch
 
-let mapleader = "`"
-nnoremap , <leader>
+"let mapleader = "`" "(\ is the default, NOTE: for when commented out)
 
 nmap <Enter> o<Esc>
 
@@ -55,7 +54,7 @@ nnoremap <C-t><C-t> :tabnext<cr>
                         "SplitCommands"
                         "============="
 " Could Keep these, and may well add back in, but limiting for now
-" in case I want to use elsewhere or fore bespoke stuff 
+" in case I want to use elsewhere or fore bespoke stuff
 " like mapping j to gj
 
 "nnoremap <C-j> <C-w>j
@@ -156,10 +155,8 @@ if has("win32")
 endif
 
 if !has("gui_running") " and win32 or is okay without?
-  set t_ut="" 
+  set t_ut=""
 endif
-
-
 
 
 
