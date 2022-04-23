@@ -1,7 +1,21 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": 
     [
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+\\"
+        },
+        {
+            "command": "togglePaneZoom",
+            "keys": "alt+z"
+        },
         {
             "command": 
             {
@@ -14,14 +28,10 @@
             "command": 
             {
                 "action": "splitPane",
-                "split": "horizontal",
+                "split": "down",
                 "splitMode": "duplicate"
             },
             "keys": "alt+minus"
-        },
-        {
-            "command": "togglePaneZoom",
-            "keys": "alt+z"
         },
         {
             "command": "paste",
@@ -30,15 +40,6 @@
         {
             "command": "find",
             "keys": "ctrl+shift+f"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "vertical",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+\\"
         },
         {
             "command": 
@@ -73,84 +74,77 @@
         "list": 
         [
             {
-                "name": "PowerShell Core",
                 "colorScheme": "sanoBattousai",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Source Code Pro for Powerline",
                     "size": 11,
                     "weight": "medium"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
+                "name": "PowerShell Core",
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "name": "Developer Powershell",
                 "colorScheme": "sanoBattousai",
-                "commandline": "pwsh.exe -noe -c \"&{Import-Module \"\"\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 9a06114b}",
+                "guid": "{0f628a46-f40d-52ae-9465-ca6e05e67296}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Source Code Pro for Powerline",
                     "size": 11,
                     "weight": "medium"
                 },
-                "guid": "{2c5a79ff-0c48-4cee-b54f-5030ff83cb94}",
-                "hidden": false,
-                "icon": "C:\\Program Files\\PowerShell\\7\\assets\\Powershell_av_colors.ico"
+                "icon": "C:\\Program Files\\PowerShell\\7\\assets\\Powershell_av_colors.ico",
+                "source": "Windows.Terminal.VisualStudio"
+                //"commandline": "pwsh.exe -noe -c \"&{Import-Module \"\"\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 9a06114b}",
+                //"guid": "{2c5a79ff-0c48-4cee-b54f-5030ff83cb94}",
+                //"name": "Developer Powershell"
             },
             {
-                "name": "Native Tools x64",
                 "colorScheme": "sanoBattousai",
-                "commandline": "cmd.exe /k \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\"",
+                "commandline": "wsl.exe -d Ubuntu-20.04",
                 "font": 
                 {
-                    "face": "Source Code Pro",
+                    "face": "Source Code Pro for Powerline",
                     "size": 11,
                     "weight": "medium"
                 },
-                "guid": "{956b0fc6-02fe-4390-b360-e4d28a3ad57e}",
-                "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png"
+                "guid": "{17dbd476-40e5-42a9-b2f2-1d53f8554d5e}",
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Ubuntu-20.04"
             },
             {
-                "name": "Command Prompt",
-                "commandline": "cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false
-            },
-            {
-                "name": "Ubuntu 20.04.4 LTS",
-                "guid": "{5a069d55-87bd-57cf-8a07-2726b203d3e5}",
-                "source": "CanonicalGroupLimited.Ubuntu20.04LTS_79rhkp1fndgsc"
-            }
+                "hidden": false,
+                "name": "Command Prompt"
+            }//,
+            //{
+            //    "colorScheme": "sanoBattousai",
+            //    "commandline": "cmd.exe /k \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\"",
+            //    "font": 
+            //    {
+            //        "face": "Source Code Pro",
+            //        "size": 11,
+            //        "weight": "medium"
+            //    },
+            //    "guid": "{956b0fc6-02fe-4390-b360-e4d28a3ad57e}",
+            //    "hidden": false,
+            //    "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
+            //    "name": "Native Tools x64"
+            //},
+            //{
+            //    "guid": "{35dd4dc2-594e-5320-ab20-1fcec4d7d92f}",
+            //    "hidden": false,
+            //    "name": "Developer Command Prompt for VS 2022",
+            //    "source": "Windows.Terminal.VisualStudio"
+            //}
         ]
     },
     "schemes": 
     [
-        {
-            "name": "sanoBattousai",
-            "background": "#24292E",
-            "black": "#222F3E",
-            "blue": "#5F87FF",
-            "brightBlack": "#576574",
-            "brightBlue": "#54A0FF",
-            "brightCyan": "#48DBFB",
-            "brightGreen": "#1DD1A1",
-            "brightPurple": "#D75FFF",
-            "brightRed": "#FF5F87",
-            "brightWhite": "#C8D6E5",
-            "brightYellow": "#FECA57",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#0ABDE3",
-            "foreground": "#C8D6E5",
-            "green": "#10AC84",
-            "purple": "#AF5FFF",
-            "red": "#FF5F5F",
-            "selectionBackground": "#FFFFFF",
-            "white": "#8395A7",
-            "yellow": "#FF9F43"
-        },
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -336,6 +330,29 @@
             "yellow": "#C4A000"
         },
         {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu20.04LTSColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
             "background": "#000000",
             "black": "#000000",
             "blue": "#000080",
@@ -357,6 +374,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#C0C0C0",
             "yellow": "#808000"
+        },
+        {
+            "background": "#24292E",
+            "black": "#222F3E",
+            "blue": "#5F87FF",
+            "brightBlack": "#576574",
+            "brightBlue": "#54A0FF",
+            "brightCyan": "#48DBFB",
+            "brightGreen": "#1DD1A1",
+            "brightPurple": "#D75FFF",
+            "brightRed": "#FF5F87",
+            "brightWhite": "#C8D6E5",
+            "brightYellow": "#FECA57",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#0ABDE3",
+            "foreground": "#C8D6E5",
+            "green": "#10AC84",
+            "name": "sanoBattousai",
+            "purple": "#AF5FFF",
+            "red": "#FF5F5F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#8395A7",
+            "yellow": "#FF9F43"
         }
     ],
     "showTabsInTitlebar": true,
