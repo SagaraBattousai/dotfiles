@@ -1,36 +1,89 @@
-" Apache v2 Licence combined with GPLv3 Licence code
-" Resulting in GPLv3 Licence
+" Vim indent file
+" Language:     CMake (ft=cmake)
+" Author:       Andy Cedilnik <andy.cedilnik@kitware.com>
+" Maintainer:   Dimitri Merejkowsky <d.merej@gmail.com>
+" Former Maintainer: Karthik Krishnan <karthik.krishnan@kitware.com>
+" Last Change:  2017 Aug 30
+"
+" License:      The CMake license applies to this file. See
+"               https://cmake.org/licensing
+"               This implies that distribution with Vim is allowed
 
-setlocal indentexpr=CMakeGetIndent(v:lnum) "  GetCaloCMakeIndent(v:lnum)
+if exists("b:did_indent")
+  finish
+endif
+let b:did_indent = 1
 
-let s:maxoff = 50 " maximum number of lines to look backwards.
+let s:keepcpo= &cpo
+set cpo&vim
 
-function GetCaloCMakeIndent(lnum)
+setlocal indentexpr=CMakeGetIndent(v:lnum)
+setlocal indentkeys+==ENDIF(,ENDFOREACH(,ENDMACRO(,ELSE(,ELSEIF(,ENDWHILE(
 
-  " Trust deindent by user after Project statement
-  let plnum = prevnonblank(v:lnum - 1)
-    if plnum != 0 && getline(plnum) =~ ').*'
-      call cursor(plnum, col(1))
-      let ppair = searchpair('(', '', ')', 'b') "'nbW',
-      if ppair != 0
-        if getline(ppair) =~ '^\s*\(project\|PROJECT\)\>'
-          " See if the user has already dedented
-          " Just (09/07/21) rechecke and above is good
-          if indent(a:lnum) > indent(plnum) - shiftwidth()
-            " If not, recommend one dedent
-            return indent(plnum) - shiftwidth()
-          endif
-          " Otherwise, trust the user
-          return -1
-        endif
-      endif
+" Only define the function once.
+if exists("*CMakeGetIndent")
+  finish
+endif
+
+fun! CMakeGetIndent(lnum)
+  let this_line = getline(a:lnum)
+
+  " Find a non-blank line above the current line.
+  let lnum = a:lnum
+  let lnum = prevnonblank(lnum - 1)
+  let previous_line = getline(lnum)
+
+  " Hit the start of the file, use zero indent.
+  if lnum == 0
+    return 0
+  endif
+
+  let ind = indent(lnum)
+
+  let or = '\|'
+  " Regular expressions used by line indentation function.
+  let cmake_regex_comment = '#.*'
+  let cmake_regex_identifier = '[A-Za-z][A-Za-z0-9_]*'
+  let cmake_regex_quoted = '"\([^"\\]\|\\.\)*"'
+  let cmake_regex_arguments = '\(' . cmake_regex_quoted .
+                    \       or . '\$(' . cmake_regex_identifier . ')' .
+                    \       or . '[^()\\#"]' . or . '\\.' . '\)*'
+
+  let cmake_indent_comment_line = '^\s*' . cmake_regex_comment
+  let cmake_indent_blank_regex = '^\s*$'
+  let cmake_indent_open_regex = '^\s*' . cmake_regex_identifier .
+                    \           '\s*(' . cmake_regex_arguments .
+                    \           '\(' . cmake_regex_comment . '\)\?$'
+
+  let cmake_indent_close_regex = '^' . cmake_regex_arguments .
+                    \            ')\s*' .
+                    \            '\(' . cmake_regex_comment . '\)\?$'
+
+  let cmake_indent_begin_regex = '^\s*\(IF\|MACRO\|FOREACH\|ELSE\|ELSEIF\|WHILE\|FUNCTION\)\s*('
+  let cmake_indent_end_regex = '^\s*\(ENDIF\|ENDFOREACH\|ENDMACRO\|ELSE\|ELSEIF\|ENDWHILE\|ENDFUNCTION\)\s*('
+
+  " Add
+  if previous_line =~? cmake_indent_comment_line " Handle comments
+    let ind = ind
+  else
+    if previous_line =~? cmake_indent_begin_regex
+      let ind = ind + shiftwidth()
     endif
-  
-  " Delegate the rest to the original function.
-  return CMakeGetIndent(a:lnum)
+    if previous_line =~? cmake_indent_open_regex
+      let ind = ind + shiftwidth()
+    endif
+  endif
 
-endfunction
+  " Subtract
+  if this_line =~? cmake_indent_end_regex
+    let ind = ind - shiftwidth()
+  endif
+  if previous_line =~? cmake_indent_close_regex
+    let ind = ind - shiftwidth()
+  endif
 
+  return ind
+endfun
 
-
-
+let &cpo = s:keepcpo
+unlet s:keepcpo

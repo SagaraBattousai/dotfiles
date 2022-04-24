@@ -45,6 +45,10 @@ nnoremap <C-t>i :tabs<cr>
 nnoremap <C-t>m :tabmove<cr>
 nnoremap <C-t><C-t> :tabnext<cr>
 "Use CTRL-W gf/F and learn CTRL-W i (seems very cool)
+"
+"New Tab Command, May need to change 02/04/22
+nnoremap <C-S-Right> :tabnext<cr>
+nnoremap <C-S-Left> :tabprevious<cr> 
 
 
 "==============================================================="

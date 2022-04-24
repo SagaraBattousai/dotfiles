@@ -13,15 +13,25 @@ Set-Alias -Name touch -Value NewFile
 ###############################################
 ##################COLORISE LS##################
 ###############################################
-Remove-Alias ls -Force -ErrorAction Ignore
-function global:ls {
-  $args = (Format-WslPaths $args)
+
+#Remove-Alias ls -Force -ErrorAction Ignore
+#function global:ls {
+#  $args = (Format-WslPaths $args)
   
-  $base_arg = ($LS_COLORS, $EXPORT_LS_COLORS, "ls --color=auto") -join "; "
+#  # $base_arg = ($LS_COLORS, $EXPORT_LS_COLORS, "ls --color=auto") -join "; "
+#  #
+#  # VV for when colors stop (uncomment to fix me thinks)
+#  # wsl.exe "export" $LS_COLORS
         
-  # Call-WslCommand eval $input $args $base_arg
-  Call-WslCommand eval $input $args $base_arg
-}
+#  Call-WslCommand "ls" $input $args "--color=auto" #$base_arg
+#  #param([string]$fn_name, $piped, $arguments, $defaultArgs)
+#  # if ($input.MoveNext()) {
+#  #   $input.Reset()
+#  #   $input | wsl.exe "ls" "--color=auto" ($args -split $ARG_REGEX)
+#  # } else {
+#  #   wsl.exe "ls" "--color=auto" ($args -split $ARG_REGEX)
+#  # }
+#}
 
 Remove-Alias tree -Force -ErrorAction Ignore
 function global:tree {
@@ -29,19 +39,29 @@ function global:tree {
   
   $base_arg = ($LS_COLORS, $EXPORT_LS_COLORS, "tree") -join "; "
 
-  Call-WslCommand eval $input $args $base_arg
+  # Call-WslCommand eval $input $args $base_arg
+  #param([string]$fn_name, $piped, $arguments, $defaultArgs)
+  if ($input.MoveNext()) {
+    $input.Reset()
+    $input | wsl.exe eval $base_arg ($args -split $ARG_REGEX)
+  } else {
+    wsl.exe eval $base_arg ($args -split $ARG_REGEX)
+  }
 }
 
 ###############################################
 #######GENERAL UNIX COMMANDS FOR WINDOWS#######
 ###############################################
-$unixCommands = "awk", "base64", "cat", "chmod", "cp", "curl", "diff", "du", `
+#Removed cp, all the unix commands are now weirdly slow on powershell
+#WTF LS NOW SEEMS TO WORK :'( WHYYYYY
+$unixCommands = "ls", "awk", "base64", "cat", "chmod", "curl", "diff", "du", `
                 "find", "grep", "gzip", "head", "hexdump", "less", "man", `
                 "mv", "pwd", "sed", "seq", "tail", "tree", "umask", "wc"
 
 $WslDefaultParameters = @{
   Disabled = $false;
   grep = "--color=auto"
+  ls = "--color=auto"
   base64 = "--wrap=0"
   }
 
@@ -116,7 +136,7 @@ function global:Format-WslPaths {
   return $paths
 }
 
-Set-Variable -Name "EXPORT_LS_COLORS" -Value "export LS_COLORS"
+# Set-Variable -Name "EXPORT_LS_COLORS" -Value "export LS_COLORS"
 
 Set-Variable -Name "LS_COLORS" -Value ("LS_COLORS='rs=0:di=01;34:" `
 +"ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:" `

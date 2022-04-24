@@ -21,8 +21,8 @@ nmap <leader>b <Plug>(go-build)
 nmap <leader>r <Plug>(go-run)
 
 " for dealing with error plains etc
-" map <C-#> :cnext<CR>
-" map <C-'> :cprevious<CR>
-"
-map <C-#> :lnext<CR>
-map <C-'> :lprevious<CR>
+map <C-p> :cnext<CR>
+map <C-o> :cprevious<CR>
+
+" map <C-#> :lnext<CR>
+" map <C-'> :lprevious<CR>

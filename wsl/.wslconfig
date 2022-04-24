@@ -1,0 +1,3 @@
+[wsl2]
+#It seems that with default timeout ls takes forever to run
+#vmIdleTimeout=3600000

@@ -88,59 +88,38 @@
             },
             {
                 "colorScheme": "sanoBattousai",
-                "guid": "{0f628a46-f40d-52ae-9465-ca6e05e67296}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
                 "font": 
                 {
                     "face": "Source Code Pro for Powerline",
                     "size": 11,
                     "weight": "medium"
                 },
-                "icon": "C:\\Program Files\\PowerShell\\7\\assets\\Powershell_av_colors.ico",
-                "source": "Windows.Terminal.VisualStudio"
-                //"commandline": "pwsh.exe -noe -c \"&{Import-Module \"\"\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 9a06114b}",
-                //"guid": "{2c5a79ff-0c48-4cee-b54f-5030ff83cb94}",
-                //"name": "Developer Powershell"
+                "guid": "{60c3e313-8e1a-58f6-8175-3650c2bd2b26}",
+                "hidden": false,
+                "name": "Ubuntu 22.04 LTS",
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                //may change as doesnt start in correct dir
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             },
             {
                 "colorScheme": "sanoBattousai",
-                "commandline": "wsl.exe -d Ubuntu-20.04",
                 "font": 
                 {
                     "face": "Source Code Pro for Powerline",
                     "size": 11,
                     "weight": "medium"
                 },
-                "guid": "{17dbd476-40e5-42a9-b2f2-1d53f8554d5e}",
-                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                "name": "Ubuntu-20.04"
+                "guid": "{0f628a46-f40d-52ae-9465-ca6e05e67296}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\PowerShell\\7\\assets\\Powershell_av_colors.ico",
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
-            }//,
-            //{
-            //    "colorScheme": "sanoBattousai",
-            //    "commandline": "cmd.exe /k \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat\"",
-            //    "font": 
-            //    {
-            //        "face": "Source Code Pro",
-            //        "size": 11,
-            //        "weight": "medium"
-            //    },
-            //    "guid": "{956b0fc6-02fe-4390-b360-e4d28a3ad57e}",
-            //    "hidden": false,
-            //    "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
-            //    "name": "Native Tools x64"
-            //},
-            //{
-            //    "guid": "{35dd4dc2-594e-5320-ab20-1fcec4d7d92f}",
-            //    "hidden": false,
-            //    "name": "Developer Command Prompt for VS 2022",
-            //    "source": "Windows.Terminal.VisualStudio"
-            //}
+            }
         ]
     },
     "schemes": 
@@ -328,6 +307,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#D3D7CF",
             "yellow": "#C4A000"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-22.04-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
         },
         {
             "background": "#300A24",
