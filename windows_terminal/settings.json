@@ -6,11 +6,14 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "right",
-                "splitMode": "duplicate"
+                "action": "copy",
+                "singleLine": false
             },
-            "keys": "alt+\\"
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+shift+v"
         },
         {
             "command": "togglePaneZoom",
@@ -19,10 +22,11 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
+                "action": "splitPane",
+                "split": "right",
+                "splitMode": "duplicate"
             },
-            "keys": "ctrl+shift+c"
+            "keys": "alt+\\"
         },
         {
             "command": 
@@ -34,12 +38,12 @@
             "keys": "alt+minus"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+shift+v"
-        },
-        {
             "command": "find",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "command": "closePane",
+            "keys": "alt+x"
         },
         {
             "command": 
@@ -49,10 +53,6 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+`"
-        },
-        {
-            "command": "closePane",
-            "keys": "alt+x"
         }
     ],
     "alwaysShowTabs": true,
@@ -87,6 +87,7 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
+                "bellStyle": "none",
                 "colorScheme": "sanoBattousai",
                 "font": 
                 {
@@ -96,9 +97,8 @@
                 },
                 "guid": "{60c3e313-8e1a-58f6-8175-3650c2bd2b26}",
                 "hidden": false,
-                "name": "Ubuntu 22.04 LTS",
                 "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
-                //may change as doesnt start in correct dir
+                "name": "Ubuntu 22.04 LTS",
                 "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             },
             {
@@ -119,6 +119,17 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
+            },
+            {
+                "colorScheme": "sanoBattousai",
+                "font": 
+                {
+                    "face": "Source Code Pro for Powerline"
+                },
+                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+                "hidden": true,
+                "name": "Visual Studio Debug Console",
+                "source": "VSDebugConsole"
             }
         ]
     },

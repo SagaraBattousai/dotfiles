@@ -32,7 +32,7 @@ endif
 "
 "let g:gui_background  = \"#2C3E50"       "44:62:80
 let g:gui_background  =  "#24292E"       "44:62:80
-let g:black           = ["#222F3E", 235] "34:47:62
+let g:black           = ["#222F3E", 235] "34:47:62    \x1B[38\48;5;235m
 let g:blue            = ["#5f87ff", 69]  "95:135:255
 let g:light_black     = ["#576574", 60]  "87:101:116
 let g:light_blue      = ["#54A0FF", 75]  "84:160:255

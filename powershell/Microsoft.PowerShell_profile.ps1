@@ -54,14 +54,17 @@ function global:tree {
 ###############################################
 #Removed cp, all the unix commands are now weirdly slow on powershell
 #WTF LS NOW SEEMS TO WORK :'( WHYYYYY
-$unixCommands = "ls", "awk", "base64", "cat", "chmod", "curl", "diff", "du", `
+# Removed ls/mv due to things like looking in different drives abd the crazy lag
+$unixCommands = #"ls", 
+                "awk", "base64", "cat", "chmod", "curl", "diff", "du", `
                 "find", "grep", "gzip", "head", "hexdump", "less", "man", `
-                "mv", "pwd", "sed", "seq", "tail", "tree", "umask", "wc"
+                #"mv", 
+                "pwd", "sed", "seq", "tail", "tree", "umask", "wc"
 
 $WslDefaultParameters = @{
   Disabled = $false;
   grep = "--color=auto"
-  ls = "--color=auto"
+  #ls = "--color=auto"
   base64 = "--wrap=0"
   }
 
