@@ -20,6 +20,17 @@ set encoding=utf-8
 
 set hlsearch
 
+"Coc Vim example selection (Trial run)
+set updatetime=300 "Although this is for backup its also for hover!
+"I quite like the sign column popping up
+
+
+"The rest of the commands will be in the following file:
+runtime coc_vimrc.vim
+
+"End of Coc Vim trial run
+
+
 "let mapleader = "`" "(\ is the default, NOTE: for when commented out)
 
 nmap <Enter> o<Esc>
@@ -32,6 +43,8 @@ nnoremap <leader>l :%s/\s\+$//e<CR>
 
 " noremap \h :noh<CR>
 noremap <leader>h :noh<CR>
+
+noremap <leader>f :ALEFix<CR> " may comment out for now due to Coc
 
 "Tab Commands
 nnoremap <C-t>n :tabnew<cr>
@@ -116,6 +129,8 @@ colorscheme sanoBattousai
 "============================================================================="
 "============================Tab Auto Complete================================"
 "============================================================================="
+
+"Old school (Non-Coc) tab auto complete which is just search for other text
 "Lost origional tab auto complete, trying new
 function! Tab_Or_Complete()
     if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
@@ -125,10 +140,29 @@ function! Tab_Or_Complete()
     endif
   endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-"set dictionary="/usr/dict/words"
 
+" Coc Mappings
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm() : \"\<C-g>u\<CR>"
+inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <C-Space> coc#refresh()
+" inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+" inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+
+
+"set dictionary="/usr/dict/words"
 set wildmode=longest,list,full
 set wildmenu
+
+"=ALE
+
+let g:ale_disable_lsp = 1
+" let g:airline#extensions#ale#enabled = 1
+
+
+
+
 
 "============================================================================="
 "============================Nerdtree Settings================================"
@@ -161,14 +195,5 @@ endif
 if !has("gui_running") " and win32 or is okay without?
   set t_ut=""
 endif
-
-
-
-
-
-
-
-
-
 
 

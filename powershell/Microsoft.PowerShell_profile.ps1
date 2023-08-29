@@ -1,20 +1,39 @@
 
-Set-Alias -Name timeit -Value Measure-Command
+[Net.ServicePointManager]::SecurityProtocol =
+    [Net.ServicePointManager]::SecurityProtocol -bor
+    [Net.SecurityProtocolType]::Tls12
 
-function NewFile {
+
+Set-Alias -Name timeit -Value Measure-Command
+Set-Alias -Name man -Value Get-Help
+
+function touch { #NewFile {
   param ($name)
   New-Item -Path $name -ItemType File
 }
 
-Set-Alias -Name touch -Value NewFile
+#Set-Alias -Name touch -Value NewFile
 
 
+Import-Module PSColor
+Remove-Alias -Name ls -Force #Incase aliased
+function ls {
+  param ([int]$Column = 5)
+  #Paramless for now, will forward later
+  #$count = (Get-ChildItem | 
+            #Tee-Object -variable ls_output | 
+            #measure-object).count
+  #if ($count % .....
+  #echo $ls_output | fw
+  Get-ChildItem | fw -Column $Column
+}
 
 ###############################################
 ##################COLORISE LS##################
 ###############################################
 
-#Remove-Alias ls -Force -ErrorAction Ignore
+
+
 #function global:ls {
 #  $args = (Format-WslPaths $args)
   
@@ -55,10 +74,11 @@ function global:tree {
 #Removed cp, all the unix commands are now weirdly slow on powershell
 #WTF LS NOW SEEMS TO WORK :'( WHYYYYY
 # Removed ls/mv due to things like looking in different drives abd the crazy lag
-$unixCommands = #"ls", 
-                "awk", "base64", "cat", "chmod", "curl", "diff", "du", `
-                "find", "grep", "gzip", "head", "hexdump", "less", "man", `
-                #"mv", 
+$unixCommands = #"ls", #"cat", 
+                "awk", "base64", `
+                "chmod", "curl", "diff", "du", `
+                "find", "grep", "gzip", "head", "hexdump", "less", `
+                #"mv",
                 "pwd", "sed", "seq", "tail", "tree", "umask", "wc"
 
 $WslDefaultParameters = @{

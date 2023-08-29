@@ -1,0 +1,3 @@
+Windows: AppData\Roaming\Google\AndroidStudio2022.1\colors
+
+Note: You may need to create colors dir and Google may be Jetbrains and the IDE name may also be different but self explanatory

@@ -54,7 +54,7 @@ let g:light_pink      = ["#FF9FF3", 219] "255:159:243
 let g:pink            = ["#FF87FF", 213] "255:135:255
 let g:light_turquoise = ["#00D2D3", 80]  "0:210:211
 let g:turquoise       = ["#01A3A4", 37]  "1:163:164
-let g:comment         = ["#D7AFFF", 183] "215:175:255
+let g:comment         = ["#D7AFFF", 183] "215:175:255 Change at some point
 let g:None            = ["NONE", "NONE"]
 "============================================================================="
 "===========================sanoBattousai Styles=============================="
@@ -182,7 +182,8 @@ call SetColours("Comment", g:comment)
 "============================================================================"
 
 "Prefered
-call SetColours("Constant", g:light_pink)
+" call SetColours("Constant", g:light_pink)
+call SetColours("Constant", g:light_orange) " Okay for now
 
 call SetColours("String", g:light_red)
 
@@ -221,7 +222,8 @@ call SetColours("Exception", g:light_red)
 "============================================================================"
 
 "Prefered
-call SetColours("PreProc", g:pink)
+" call SetColours("PreProc", g:pink) -- bad colour
+call SetColours("PreProc", g:light_green)
 
 call SetColours("Include", g:light_purple)
 
@@ -253,7 +255,8 @@ call SetColours("Tag", g:pink)
 
 call SetColours("Delimiter", g:blue) "( and ) in vimscript.
 
-call SetColours("SpecialComment", g:light_purple)
+" call SetColours("SpecialComment", g:light_purple)
+call SetColours("SpecialComment", g:purple)
 
 call SetColours("Debug", g:purple)
 
