@@ -134,16 +134,15 @@ alias ta="tmux attach"
 ##############################################################################
 if [[ "$(uname -r)" == *(m|M)"icrosoft"* ]]; then
 
-  alias ghci="ghci.exe" 
-  alias python="python.exe"
-  alias pip="pip.exe"
-  alias gvim="cmd.exe /c gvim"
-
   COLORS_FILE=~/.dircolors
   #LS_COLORS
   if [[ -f "$COLORS_FILE" ]]; then
     eval "$(dircolors -b ~/.dircolors)"
   fi
+
+  # if [[ -f "/usr/local/bin/oh-my-posh" ]]; then
+  #   eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh/themes/calo.omp.json)"
+  # fi
 
 fi
 
@@ -218,3 +217,19 @@ if [[ $(uname -n) == *"doc.ic.ac.uk" ]]; then
 
   export PYTHONPATH=$HOME/pythonUtilities:$PATHPATH
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/james/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/james/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/james/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/james/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
