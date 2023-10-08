@@ -84,8 +84,10 @@
           "style": "diamond",
           "templates": [
             "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}",
-            "{{ .Full }}{{ end }}"
+            "{{ .Full }}"
           ],
+          "missing_command_text": "Virtualenv missing",
+          "home_enabled": true,
           "trailing_diamond": "",
           "type": "python"
         },

@@ -127,8 +127,6 @@ alias ta="tmux attach"
 #I believe and know I know that they're okay/good although still not prefered
 #Basically they're #define's as far as im concerned
 
-
-
 ##############################################################################
 ############################Windows WSL alias'################################
 ##############################################################################
@@ -232,4 +230,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
