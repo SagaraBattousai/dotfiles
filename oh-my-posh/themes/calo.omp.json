@@ -1,0 +1,136 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "version": 2,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#ffe9aa",
+          "foreground": "#100e23",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " \uf0e7 ",
+          "type": "root"
+        },
+        {
+          "background": "p:light_blue",
+          "foreground": "p:light_gray",
+          "powerline_symbol": "",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "type": "session",
+          "background": "p:light_blue",
+          "foreground": "p:white",
+          "style": "diamond",
+          "templates": [
+            "{{ if .SSHSession }}{{end}}",
+            "{{ .UserName }}@",
+            "{{if hasPrefix \"DESKTOP\" .HostName}}{{replace \"DESKTOP\" \" \" .HostName}}{{end}}",
+            "{{if hasPrefix \"LAPTOP\" .HostName}}{{replace \"LAPTOP\" \" \" .HostName}}{{end}}",
+            "{{if hasPrefix \"vm\" .HostName}}{{ replace \"vm\" \" \" .HostName }}{{end}}"
+          ],
+          "powerline_symbol": ""
+        },
+        {
+          "background": "p:purple",
+          "foreground": "p:white",
+          "powerline_symbol": "",
+          "properties": {
+            "style": "full"
+          },
+          "style": "powerline",
+          "template": " {{ path .Path .Location }} ",
+          "type": "path"
+        },
+        {
+          "background": "p:light_green",
+          "foreground": "p:black",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "templates": [
+            " {{ .HEAD }} ",
+            "{{ if .BranchStatus }}{{ .BranchStatus }}{{ end }}",
+            "{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}",
+            "{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}",
+            "{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}"
+          ],
+          "background_templates": [
+            "{{ if .Working.Changed }}p:light_orange{{ end }}",
+            "{{ if .Staging.Changed }}p:orange{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:light_green{{ end }}",
+            "{{ if gt .Ahead 0 }}p:blue{{ end }}",
+            "{{ if gt .Behind 0 }}p:light_pink{{ end }}"
+          ],
+          "background_templates_logic": "first_match",
+          "type": "git",
+          "properties": {
+            "branch_icon": "",
+            "branch_identical_icon": "≡",
+            "branch_ahead_icon": "↑",
+            "branch_behind_icon": "↓",
+            "branch_gone_icon": "💀"
+          }
+        },
+        {
+          "background": "p:red",
+          "foreground": "p:white",
+          "style": "diamond",
+          "templates": [
+            "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}",
+            "{{ .Full }}{{ end }}"
+          ],
+          "trailing_diamond": "",
+          "type": "python"
+        },
+        {
+          "background": "p:light_red",
+          "foreground": "p:white",
+          "trailing_diamond": "",
+          "style": "diamond",
+          "template": " {{ reason .Code }} ",
+          "type": "status"
+        }
+      ]
+    }
+  ],
+  "palette": {
+    "gui_background": "#24292E",
+    "black":          "#222F3E",
+    "blue":           "#5f87ff",
+    "light_black":    "#576574",
+    "light_blue":     "#54A0FF",
+    "light_cyan":     "#48DBFB",
+    "light_green":    "#1DD1A1",
+    "light_purple":   "#D75FFF",
+    "light_red":      "#FF5F87",
+    "light_gray":     "#C8D6E5",
+    "light_orange":   "#FECA57",
+    "cyan":           "#0ABDE3",
+    "green":          "#10AC84",
+    "purple":         "#AF5FFF",
+    "red":            "#FF5F5F",
+    "gray":           "#8395A7",
+    "orange":         "#FF9F43",
+    "white":          "#FFFFFF",
+    "light_pink":     "#FF9FF3",
+    "pink":           "#FF87FF",
+    "light_turquoise":"#00D2D3",
+    "turquoise":      "#01A3A4",
+    "comment":        "#D7AFFF",
+    "old_session_background": "#61AFEF",
+    "old_path_background":    "#C678DD",
+    "old_git_background":     "#95ffa4",
+    "old_git_foreground":     "#193549",
+    "old_python_background":  "#FF6471",
+    "old_cmake_foreground":   "#E8EAEE",
+    "old_cmake_background":   "#1E9748",
+    "old_status_background":  "#ff8080"
+  }
+}

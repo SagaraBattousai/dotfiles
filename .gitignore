@@ -1,2 +1,4 @@
 #vim junkfiles
 *.swp
+.mypy_cache/
+

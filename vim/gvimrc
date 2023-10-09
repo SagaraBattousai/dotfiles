@@ -7,7 +7,8 @@ inoremap <C-s> <Esc>:w<CR>
 
 "|| has("win64"))
 if has("win32") 
-  set guifont=Source_Code_Pro_Medium:h12:cANSI:qDRAFT
+  " set guifont=Source_Code_Pro_Medium:h12:cANSI " :qDRAFT
+  set guifont=SauceCodePro_NF_Medium:h12:cANSI " :qDRAFT
   set backspace=indent,eol,start
   set ruler
   set vb t_vb=
@@ -16,13 +17,26 @@ if has("win32")
   set guioptions-=T
   set guioptions-=r
   set guioptions-=L
+  set guioptions+=k
   "nnoremap <C-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
   "nnoremap <C-F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
   "nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
 endif
 
+" normal version
+" if &number
+"   set columns=84
+" else
+"   set columns=80
+" endif
+
+"if python VV but cant do that as messes with sp if in ft
+" Since black uses 88 we need to add 8
 if &number
-  set columns=84
+  set columns=92 "84 + 8
 else
-  set columns=80
+  set columns=88 "80 + 8
 endif
+
+
+

@@ -1,4 +1,15 @@
 
+
+oh-my-posh init pwsh --config "~\dotfiles/oh-my-posh/themes/calo.omp.json" | Invoke-Expression
+# Calo theme is based of of aliens but may switch to agnoster (with same edits)
+
+# aliens.omp.json
+# agnoster.omp.json
+# paradox.omp.json
+# M365Princess.omp.json
+
+$env:POSH_GIT_ENABLED = $true
+
 [Net.ServicePointManager]::SecurityProtocol =
     [Net.ServicePointManager]::SecurityProtocol -bor
     [Net.SecurityProtocolType]::Tls12
@@ -14,19 +25,57 @@ function touch { #NewFile {
 
 #Set-Alias -Name touch -Value NewFile
 
+################### Set Get-ChildItem Colours #######################
+$PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue 
+$PSStyle.FileInfo.SymbolicLink = $PSStyle.Foreground.BrightCyan 
+$PSStyle.FileInfo.Executable = $PSStyle.Foreground.BrightRed
 
-Import-Module PSColor
-Remove-Alias -Name ls -Force #Incase aliased
-function ls {
-  param ([int]$Column = 5)
-  #Paramless for now, will forward later
-  #$count = (Get-ChildItem | 
-            #Tee-Object -variable ls_output | 
-            #measure-object).count
-  #if ($count % .....
-  #echo $ls_output | fw
-  Get-ChildItem | fw -Column $Column
+## Image Extensions
+$PSStyle.FileInfo.Extension[".png"] = $PSStyle.Foreground.Purple
+
+## Markdown Extensions
+$PSStyle.FileInfo.Extension[".md"] = $PSStyle.Foreground.Green
+$PSStyle.FileInfo.Extension[".rst"] = $PSStyle.Foreground.Green
+
+## Script Extensions #ps1 defaults to yellow (orange) so lets make the
+## rest follow suit
+$PSStyle.FileInfo.Extension[".py"] = $PSStyle.Foreground.Yellow
+$PSStyle.FileInfo.Extension[".bat"] = $PSStyle.Foreground.Yellow
+
+
+function New-Link {
+  param (
+    [Parameter(Position=0, Mandatory)]
+    [string]$Path,
+    [Parameter(Position=1, Mandatory)]
+    [string]$Target,
+    [switch]$Hard
+    )
+    if ($Hard) {$LinkType = "HardLink"}
+    else {$LinkType = "SymbolicLink"}
+    new-item -itemtype $LinkType -Path $Path -target $Target
 }
+
+Set-Alias -Name nl -Value New-Link
+Set-Alias -Name ln -Value New-Link
+
+
+
+# Import-Module PSColor
+
+# Piping to fw removes colours so we'll ignore for now!
+#Remove-Alias -Name ls -Force -ErrorAction ignore #Incase aliased
+#function ls {
+#  # param ([int]$Column = 5) #<- causes issues with surplying a path
+#  #Paramless for now, will forward later
+#  #$count = (Get-ChildItem | 
+#            #Tee-Object -variable ls_output | 
+#            #measure-object).count
+#  #if ($count % .....
+#  #echo $ls_output | fw
+#  $Column = 5
+#  Get-ChildItem | fw -Column $Column
+#}
 
 ###############################################
 ##################COLORISE LS##################

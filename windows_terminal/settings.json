@@ -65,6 +65,12 @@
     ],
     "initialCols": 81,
     "initialRows": 25,
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
     "profiles": 
     {
         "defaults": 
@@ -77,7 +83,7 @@
                 "colorScheme": "sanoBattousai",
                 "font": 
                 {
-                    "face": "Source Code Pro for Powerline",
+                    "face": "SauceCodePro Nerd Font",
                     "size": 11.0,
                     "weight": "medium"
                 },
@@ -85,6 +91,22 @@
                 "hidden": false,
                 "name": "PowerShell Core",
                 "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "bellStyle": "none",
+                "colorScheme": "sanoBattousai",
+                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Ubuntu-22.04",
+                "font": 
+                {
+                    "face": "SauceCodePro Nerd Font",
+                    "size": 11.0,
+                    "weight": "medium"
+                },
+                "guid": "{8394f299-906a-464b-abf2-fa348ec3f183}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+                "name": "Ubuntu-22.04",
+                "startingDirectory": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\james"
             },
             {
                 "colorScheme": "sanoBattousai",
@@ -115,18 +137,6 @@
                 "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
-            },
-            {
-                "colorScheme": "sanoBattousai",
-                "font": 
-                {
-                    "face": "Source Code Pro for Powerline",
-                    "size": 11.0
-                },
-                "guid": "{d7b20cea-47a9-518c-95a4-c8bd91e2e1c6}",
-                "hidden": false,
-                "name": "Ubuntu 22.04.2 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             }
         ]
     },
@@ -412,6 +422,50 @@
     "showTabsInTitlebar": true,
     "showTerminalTitleInTitlebar": true,
     "theme": "system",
-    "themes": [],
+    "themes": 
+    [
+        {
+            "name": "legacyDark",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "dark",
+                "useMica": false
+            }
+        },
+        {
+            "name": "legacyLight",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "light",
+                "useMica": false
+            }
+        },
+        {
+            "name": "legacySystem",
+            "tab": 
+            {
+                "background": null,
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "window": 
+            {
+                "applicationTheme": "system",
+                "useMica": false
+            }
+        }
+    ],
     "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502"
 }
