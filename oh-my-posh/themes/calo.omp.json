@@ -71,6 +71,7 @@
           "background_templates_logic": "first_match",
           "type": "git",
           "properties": {
+            "fetch_status": true, //Required since an update (not sure which)
             "branch_icon": "",
             "branch_identical_icon": "≡",
             "branch_ahead_icon": "↑",
