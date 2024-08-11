@@ -4,6 +4,10 @@
     "actions": 
     [
         {
+            "command": "togglePaneZoom",
+            "keys": "alt+z"
+        },
+        {
             "command": 
             {
                 "action": "splitPane",
@@ -11,6 +15,15 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+minus"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+`"
         },
         {
             "command": "find",
@@ -40,19 +53,6 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+\\"
-        },
-        {
-            "command": "togglePaneZoom",
-            "keys": "alt+z"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+`"
         }
     ],
     "alwaysShowTabs": true,
@@ -137,6 +137,24 @@
                 "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
+            },
+            {
+                "guid": "{5545f0f4-044b-57fe-a842-f603c7bde5de}",
+                "hidden": false,
+                "name": "Pico - Developer Command Prompt (SDK v1.5.1)",
+                "source": "Raspberry Pi Pico SDK v1.5.1"
+            },
+            {
+                "guid": "{4b944f04-959b-56e6-93cd-3de583e48d92}",
+                "hidden": false,
+                "name": "Pico - Developer PowerShell (SDK v1.5.1)",
+                "source": "Raspberry Pi Pico SDK v1.5.1"
+            },
+            {
+                "guid": "{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}",
+                "hidden": false,
+                "name": "Ubuntu 22.04.3 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             }
         ]
     },
@@ -422,50 +440,6 @@
     "showTabsInTitlebar": true,
     "showTerminalTitleInTitlebar": true,
     "theme": "system",
-    "themes": 
-    [
-        {
-            "name": "legacyDark",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacyLight",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacySystem",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "system",
-                "useMica": false
-            }
-        }
-    ],
+    "themes": [],
     "wordDelimiters": " ./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}~?\u2502"
 }

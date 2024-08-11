@@ -10,7 +10,16 @@
   "python.formatting.provider": "black",
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": true,
+  //Enable inlay hints for function return types
+  "pyright.inlayHints.functionReturnTypes": false,
+  //VV This was removing underlineing, next get it red squiggly
   "pyright.disableDiagnostics": true,
+  //Enable inlay hints for variable types
+  "pyright.inlayHints.variableTypes": false,
+  //Enable inlay hints for variable types
+  "pyright.inlayHints.parameterTypes": false,
+  //First 4 are default and appended liquid
+  "html.filetypes": ["html", "handlebars", "htmldjango", "blade", "liquid"],
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",

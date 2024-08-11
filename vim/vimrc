@@ -20,6 +20,9 @@ set encoding=utf-8
 
 set hlsearch
 
+"new session command to ty out
+set sessionoptions+=resize
+
 "Coc Vim example selection (Trial run)
 set updatetime=300 "Although this is for backup its also for hover!
 "I quite like the sign column popping up
@@ -32,6 +35,13 @@ set updatetime=300 "Although this is for backup its also for hover!
 runtime coc_vimrc.vim
 
 "End of Coc Vim trial run
+
+" NOTE: This location lists is not understood as well as it should be but
+" I don't have time (yet) to learn it properly. For now just set command to
+" open the list so I can see the errors I think coc will put in for me
+" (may require CocDiagnostics to be run first?!)
+nnoremap <C-l> :lopen<cr>
+
 
 
 "let mapleader = "`" "(\ is the default, NOTE: for when commented out)
@@ -83,6 +93,7 @@ nnoremap <C-S-Left> :tabprevious<cr>
 
 "nnoremap <C-j> <C-w>j
 "nnoremap <C-k> <C-w>k
+"NOTE: Below has been used elsewhere so if we uncomment this be warned
 "nnoremap <C-l> <C-w>l
 "nnoremap <C-h> <C-w>h
 

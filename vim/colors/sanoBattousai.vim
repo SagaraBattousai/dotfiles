@@ -287,3 +287,11 @@ call SetColours("Todo", g:light_pink, g:None, g:bold, g:underline)
 "==========================COC HIGHLIGHTING GROUPS==========================="
 "============================================================================"
 call SetColours("CocErrorSign", g:red)
+
+" call SetColours("CocUnderLine"
+" TODO: change SetColours to add guisp
+hi CocErrorHighlight term=underline cterm=underline gui=undercurl guisp=#FF5F5F
+
+" Note: Original CocErrorHighlight and CocUnderLine
+"hi def link CocErrorHighlight CocUnderLine
+" hi CocUnderLine term=underline cterm=underline gui=underline guisp=#ebdbb2
