@@ -20,6 +20,7 @@
   "pyright.inlayHints.parameterTypes": false,
   //First 4 are default and appended liquid
   "html.filetypes": ["html", "handlebars", "htmldjango", "blade", "liquid"],
+  "powershell.integratedConsole.showOnStartup": false,
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",

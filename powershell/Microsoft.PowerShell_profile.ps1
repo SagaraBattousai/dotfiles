@@ -37,19 +37,39 @@ function Create-Header {
   param (
     [Parameter(Position=0, Mandatory)]
     [string]$Path,
-    [Parameter(Position=1, Mandatory)]
+    [Parameter(Position=1, Mandatory)] #TODO: make optional and use path if its empty
+    [string]$Guard_Root, #Note: dotted "." Base header_guard i.e. project.module
+    [Parameter(Position=2, Mandatory)]
     [string]$Filename
     )
-  $path_components = $Path.split([System.IO.Path]::DirectorySeparatorChar)
-  #TODO: Actually learn powershell scripting and clean this up!!
-  $header_guard = "__$((Join-String -InputObject $path_components[1..$($path_components.count -1)] -Separator "_").ToUpper())_$([System.IO.Path]::GetFileNameWithoutExtension($Filename).ToUpper())_H__"
+  $header_guard = "__$($($Guard_Root -replace "\.", "_").ToUpper())_$([System.IO.Path]::GetFileNameWithoutExtension($Filename).ToUpper())_H__"
 
   $output_file = "$Path$([System.IO.Path]::DirectorySeparatorChar)$Filename"
   New-Item -itemtype File -Path $output_file
-  echo "#ifndef $header_guard" >> $output_file
-  echo "#define $header_guard" >> $output_file
-  echo "`n`n#endif" >> $output_file
+  "#ifndef $header_guard`n#define $header_guard`n`n#endif //$header_guard" | out-file $output_file -NoNewline
 }
+
+
+
+
+#Note: Old Create_header that uses path!
+#function Old_Create-Header {
+#  param (
+#    [Parameter(Position=0, Mandatory)]
+#    [string]$Path,
+#    [Parameter(Position=1, Mandatory)]
+#    [string]$Filename
+#    )
+#  $path_components = $Path.split([System.IO.Path]::DirectorySeparatorChar)
+#  #TODO: Actually learn powershell scripting and clean this up!!
+#  $header_guard = "__$((Join-String -InputObject $path_components[1..$($path_components.count -1)] -Separator "_").ToUpper())_$([System.IO.Path]::GetFileNameWithoutExtension($Filename).ToUpper())_H__"
+
+#  $output_file = "$Path$([System.IO.Path]::DirectorySeparatorChar)$Filename"
+#  New-Item -itemtype File -Path $output_file
+#  echo "#ifndef $header_guard" >> $output_file
+#  echo "#define $header_guard" >> $output_file
+#  echo "`n`n#endif" >> $output_file
+#}
 #Set-Alias -Name touch -Value NewFile
 
 ################### Set Get-ChildItem Colours #######################
