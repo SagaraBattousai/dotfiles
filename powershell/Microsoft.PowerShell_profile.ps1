@@ -23,6 +23,33 @@ function touch { #NewFile {
   New-Item -Path $name -ItemType File
 }
 
+function Create-Source {
+  param (
+    [Parameter(Position=0, Mandatory)]
+    [string]$Path,
+    [Parameter(Position=1, Mandatory)]
+    [string]$Filename
+    )
+    New-Item -itemtype File -Path "$Path$([System.IO.Path]::DirectorySeparatorChar)$Filename"
+}
+
+function Create-Header {
+  param (
+    [Parameter(Position=0, Mandatory)]
+    [string]$Path,
+    [Parameter(Position=1, Mandatory)]
+    [string]$Filename
+    )
+  $path_components = $Path.split([System.IO.Path]::DirectorySeparatorChar)
+  #TODO: Actually learn powershell scripting and clean this up!!
+  $header_guard = "__$((Join-String -InputObject $path_components[1..$($path_components.count -1)] -Separator "_").ToUpper())_$([System.IO.Path]::GetFileNameWithoutExtension($Filename).ToUpper())_H__"
+
+  $output_file = "$Path$([System.IO.Path]::DirectorySeparatorChar)$Filename"
+  New-Item -itemtype File -Path $output_file
+  echo "#ifndef $header_guard" >> $output_file
+  echo "#define $header_guard" >> $output_file
+  echo "`n`n#endif" >> $output_file
+}
 #Set-Alias -Name touch -Value NewFile
 
 ################### Set Get-ChildItem Colours #######################
