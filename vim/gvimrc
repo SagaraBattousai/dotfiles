@@ -21,6 +21,19 @@ if has("win32")
   "nnoremap <C-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
   "nnoremap <C-F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
   "nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
+
+elseif has("unix")
+  set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 16
+  set backspace=indent,eol,start
+  set ruler
+  set vb t_vb=
+
+  set guioptions-=m
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
+  set guioptions+=k
+
 endif
 
 " normal version
