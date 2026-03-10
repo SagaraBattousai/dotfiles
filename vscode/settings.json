@@ -1,0 +1,21 @@
+//TMP
+"editor.fontFamily": "'SauceCodePro NF Medium', Consolas, 'Courier New', monospace",
+    "workbench.colorCustomizations": {
+        "terminal.ansiBlack": "#222F3E",
+        "terminal.ansiBlue": "#5f87ff",
+        "terminal.ansiBrightBlack":"#576574",
+        "terminal.ansiBrightBlue":"#54A0FF",
+        "terminal.ansiBrightCyan": "#48DBFB",
+        "terminal.ansiBrightGreen": "#1DD1A1",
+        "terminal.ansiBrightMagenta": "#D75FFF",
+        "terminal.ansiBrightRed": "#FF5F87",
+        "terminal.ansiWhite": "#C8D6E5",
+        "terminal.ansiBrightYellow": "#FECA57",
+        "terminal.ansiCyan": "#0ABDE3",
+        "terminal.ansiGreen": "#10AC84",
+        "terminal.ansiMagenta": "#AF5FFF",
+        "terminal.ansiRed": "#FF5F5F",
+        "terminal.ansiYellow": "#FF9F43",
+        "terminal.ansiBrightWhite": "#FFFFFF",
+        "terminal.background": "#24292E"
+    }
