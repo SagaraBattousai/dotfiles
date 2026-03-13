@@ -206,4 +206,16 @@ if !has("gui_running") " and win32 or is okay without?
   set t_ut=""
 endif
 
+" Fixes issue with wsl vim cursor shape changes. It is possible (although 
+" thanks to windows terminal I don't think we need it) we should add 
+" echo -ne \e[2 q to .zshrc
+
+if system('uname -r') =~ ".*microsoft.*"
+  let &t_SI = "\<Esc>[6 q"
+  let &t_SR = "\<Esc>[3 q"
+  let &t_EI = "\<Esc>[2 q"
+endif
+
+
+
 
